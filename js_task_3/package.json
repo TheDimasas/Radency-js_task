@@ -1,0 +1,33 @@
+{
+  "name": "js_task_3",
+  "version": "1.0.0",
+  "description": "Hometask 3 _ NodeJS _ React + Node.js Internship",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "Node + Express",
+    "TypeScript",
+    "Yup"
+  ],
+  "author": "TheDimas",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.3",
+    "@types/uuid": "^8.3.1",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.9"
+  }
+}
