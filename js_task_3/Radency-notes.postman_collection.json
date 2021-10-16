@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "a04935cb-2f45-4bf3-b82c-25ff9719bc67",
+		"name": "Radency-notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a note object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bread\",\r\n    \"category\": \"Task\",\r\n    \"content\": \"Proin lobortis ligula et convallis scelerisque. Vivamus eget quam et urna tincidunt vehicula. Etiam imperdiet tincidunt laoreet 11/10/2021.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7e54ee2c-0560-47ac-8562-04f84585d20b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit item",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Vestibulum libero risus, bibendum volutpat blandit placerat, convallis nec libero 11/10/2021. Nunc interdum consectetur sapien laoreet egestas 9/10/2021. Fusce at justo velit.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/notes/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5088b049-7d9c-48e6-9913-4e57b8713f6a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7e54ee2c-0560-47ac-8562-04f84585d20b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get aggregated data statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/stats",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api"
+		}
+	]
+}
