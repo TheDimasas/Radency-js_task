@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Note } from '../core/interfaces';
-import { getActive, getArchive } from '../core/notes.slice';
+import { selectActive, selectArchive } from '../core/notes.slice';
 
 import NoteRow from '../components/NoteRow';
 import Table, { TableColumn } from '../components/Table';
@@ -10,31 +10,38 @@ import Table, { TableColumn } from '../components/Table';
 const NotesTable = () => {
   const [isArchive, updateStatus] = useState(false);
 
-  const active = useSelector(getActive);
-  const archive = useSelector(getArchive);
+  const active = useSelector(selectActive);
+  const archive = useSelector(selectArchive);
 
   const columns: TableColumn[] = useMemo(
     () => [
       {
+        id: '1',
         title: '',
         className: 'logo',
       },
       {
+        id: '2',
         title: 'Name',
       },
       {
+        id: '3',
         title: 'Created',
       },
       {
+        id: '4',
         title: 'Category',
       },
       {
+        id: '5',
         title: 'Content',
       },
       {
+        id: '6',
         title: 'Dates',
       },
       {
+        id: '7',
         title: (
           <div onClick={() => updateStatus((isArchive) => !isArchive)}>
             <i className='bi bi-arrow-repeat'></i>
@@ -52,7 +59,9 @@ const NotesTable = () => {
     <Table
       columns={columns}
       data={isArchive ? archive : active}
-      renderRow={(el: Note) => <NoteRow note={el} isArchive={isArchive} />}
+      renderRow={(el: Note) => (
+        <NoteRow key={el.id} note={el} isArchive={isArchive} />
+      )}
       headClassName='list-head'
     />
   );
