@@ -70,15 +70,15 @@ export const selectNotes = (state: RootState) => state.notes.notes;
 export const selectNote = (id: string) =>
   createSelector(selectNotes, (notes) => notes.find((item) => item.id === id));
 
-export const getActive = createSelector(selectNotes, (notes) =>
+export const selectActive = createSelector(selectNotes, (notes) =>
   notes.filter((item) => !item.archived)
 );
 
-export const getArchive = createSelector(selectNotes, (notes) =>
+export const selectArchive = createSelector(selectNotes, (notes) =>
   notes.filter((item) => item.archived)
 );
 
-export const getStatistics = createSelector(selectNotes, (notes) =>
+export const selectStatistic = createSelector(selectNotes, (notes) =>
   notes.reduce<CategoryStatictic[]>((acc, note) => {
     const category = acc.find((cat) => cat.name === note.category);
 

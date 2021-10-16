@@ -1,7 +1,7 @@
 export interface TableColumn {
   title: string | JSX.Element;
   className?: string;
-  id?: string;
+  id: string;
   colSpan?: number;
 }
 
@@ -23,7 +23,12 @@ const Table: React.FC<TableProps> = ({
       <thead className={headClassName}>
         <tr>
           {columns.map((col) => (
-            <th id={col.id} className={col.className} colSpan={col.colSpan}>
+            <th
+              key={col.id}
+              id={col.id}
+              className={col.className}
+              colSpan={col.colSpan}
+            >
               {col.title}
             </th>
           ))}

@@ -21,7 +21,7 @@ const Dialog: React.FC = () => {
   const mode = useSelector(selectMode);
   const noteId = useSelector(selectNoteId);
   const note = useSelector(selectNote(noteId));
-  // HTMLDialogElement is deprecated
+  // HTMLDialogElement is deprecated(experimental)
   const dialogRef = useRef<any>(null);
 
   useEffect(() => {
